@@ -1,61 +1,74 @@
 {
-  "id": "com.example.pong.v2",
-  "name": "Pong Game",
-  "description": "Classic Pong game as a SAC custom widget",
-  "version": "1.0.0",
-  "newInstancePrefix": "pong",
-  "icon": "pong-icon-16x16.png",
-  "webcomponents": [
-    {
-      "kind": "main",
-      "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongWidget.js",
-      "tag": "com-example-pong",
-      "integrity": "sha384-H97FJpJ7rnXItlkZ/zb7Nn5rhAGYwH4vYnJHZ/DYfKM70hqzk81U5+ZyweSJuVjV"
-    },
-    {
-      "kind": "builder",
-      "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongBuilderPanel.js",
-      "tag": "com-example-pong-builder",
-      "integrity": "sha384-Od+1l4SDOdyTP+V9uZfnZaLiuCbhgqTSV2c6dGPoml4ZTtOIHndf/UE5yvrg1jWv"
-    },
-    {
-      "kind": "styling",
-      "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongStylePanel.js",
-      "tag": "com-example-pong-style",
-      "integrity": "sha384-4FCvNqSZ8XDrdywtnqWoQoDoPWcWNgJBziahSfSeUEFi4n5fuj1Azo8TUJhrNrk4"
-    }
-  ],
-  "properties": {
-    "ballSpeed": {
-      "type": "number",
-      "default": 5
-    },
-    "paddleColor": {
-      "type": "string",
-      "default": "#FFFFFF"
-    }
-  },
-  "events": {
-    "onScore": {
-      "description": "Triggered when a player scores"
-    },
-    "onGameEnd": {
-      "description": "Triggered when the game ends"
-    }
-  },
-  "methods": {
-    "resetGame": {
-      "description": "Reset the game",
-      "parameters": []
-    },
-    "setBallSpeed": {
-      "description": "Set the ball speed",
-      "parameters": [
+    "id": "com.example.pong.v3",
+    "name": "Pong Game",
+    "description": "Classic Pong game with dynamic score tracking and getter",
+    "version": "1.0.0",
+    "newInstancePrefix": "pong",
+    "icon": "pong-icon-16x16.png",
+    "webcomponents": [
         {
-          "name": "speed",
-          "type": "number"
+            "kind": "main",
+            "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongWidget.js",
+            "tag": "com-example-pong",
+            "integrity": "sha384-cspLuAVEdyt+tST+uclZb4JU89Q2AmhRemc1gKKYrCoyURmwzO4a2k94I/Yx3kyK"
+        },
+        {
+            "kind": "builder",
+            "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongBuilderPanel.js",
+            "tag": "com-example-pong-builder",
+            "integrity": "sha384-Od+1l4SDOdyTP+V9uZfnZaLiuCbhgqTSV2c6dGPoml4ZTtOIHndf/UE5yvrg1jWv"
+        },
+        {
+            "kind": "styling",
+            "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongStylePanel.js",
+            "tag": "com-example-pong-style",
+            "integrity": "sha384-4FCvNqSZ8XDrdywtnqWoQoDoPWcWNgJBziahSfSeUEFi4n5fuj1Azo8TUJhrNrk4"
         }
-      ]
+    ],
+    "properties": {
+        "ballSpeed": {
+            "type": "number",
+            "default": 5
+        },
+        "paddleColor": {
+            "type": "string",
+            "default": "#FFFFFF"
+        },
+        "scoreLeft": {
+            "type": "integer",
+            "default": -1
+        },
+        "scoreRight": {
+            "type": "integer",
+            "default": -1
+        }
+    },
+    "events": {
+        "onScore": {
+            "description": "Triggered when a player scores"
+        },
+        "onGameEnd": {
+            "description": "Triggered when the game ends"
+        }
+    },
+    "methods": {
+        "resetGame": {
+            "description": "Reset the game",
+            "parameters": []
+        },
+        "setBallSpeed": {
+            "description": "Set the ball speed",
+            "parameters": [
+                {
+                    "name": "speed",
+                    "type": "number"
+                }
+            ]
+        },
+        "getScore": {
+            "description": "Returns the current game score",
+            "parameters": [],
+            "returnType": "object"
+        }
     }
-  }
 }

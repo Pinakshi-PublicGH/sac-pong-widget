@@ -1,3 +1,4 @@
+
 class PongGame extends HTMLElement {
     constructor() {
         super();
@@ -12,6 +13,10 @@ class PongGame extends HTMLElement {
         this.paddle1 = { x: 10, y: 100, width: 10, height: 50 };
         this.paddle2 = { x: 380, y: 100, width: 10, height: 50 };
         this.keys = {};
+        this.properties = {
+            scoreLeft: -1,
+            scoreRight: -1
+        };
 
         this.animate = this.animate.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -27,6 +32,17 @@ class PongGame extends HTMLElement {
     disconnectedCallback() {
         document.removeEventListener("keydown", this.handleKeyDown);
         document.removeEventListener("keyup", this.handleKeyUp);
+    }
+
+    onCustomWidgetBeforeUpdate(changedProps) {
+        if ("scoreLeft" in changedProps || "scoreRight" in changedProps) {
+            this.updateScoreDisplay();
+        }
+    }
+
+    updateScoreDisplay() {
+        console.log("Player 1 Score:", this.properties.scoreLeft);
+        console.log("Player 2 Score:", this.properties.scoreRight);
     }
 
     handleKeyDown(e) {
@@ -71,6 +87,18 @@ class PongGame extends HTMLElement {
         this.ctx.beginPath();
         this.ctx.arc(this.ball.x, this.ball.y, this.ball.radius, 0, Math.PI * 2);
         this.ctx.fill();
+
+        this.ctx.font = "16px Arial";
+        this.ctx.fillStyle = "#000";
+        this.ctx.fillText(`P1: ${this.properties.scoreLeft}`, 20, 20);
+        this.ctx.fillText(`P2: ${this.properties.scoreRight}`, 320, 20);
+    }
+
+    getScore() {
+        return {
+            scoreLeft: this.properties.scoreLeft,
+            scoreRight: this.properties.scoreRight
+        };
     }
 }
 
