@@ -8,20 +8,20 @@
   "webcomponents": [
     {
       "kind": "main",
-      "url": "pongWidget.js",
+      "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongWidget.js",
       "tag": "com-example-pong",
       "integrity": "sha384-H97FJpJ7rnXItlkZ/zb7Nn5rhAGYwH4vYnJHZ/DYfKM70hqzk81U5+ZyweSJuVjV"
     },
     {
       "kind": "builder",
-      "url": "pongBuilderPanel.js",
+      "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongBuilderPanel.js",
       "tag": "com-example-pong-builder",
       "integrity": "sha384-X8tdzBHsrupXcLCo4291BkXwxfZecFjDkydf/GRdeUu2wE0LP3wtbsviarWMriDp"
 
     },
     {
       "kind": "styling",
-      "url": "pongStylePanel.js",
+      "url": "https://pinakshi-publicgh.github.io/sac-pong-widget/pongStylePanel.js",
       "tag": "com-example-pong-style",
       "integrity": "sha384-uCYOc2wStGFOHVJtfLxslSjHrUZw/1Hr03bWHH9ca1+Q2RmjXzoWIh7ZiCjfn72o"
     }
