@@ -1,0 +1,62 @@
+{
+  "id": "com.example.pong",
+  "name": "Pong Game",
+  "description": "Classic Pong game as a SAC custom widget",
+  "version": "1.0.0",
+  "newInstancePrefix": "pong",
+  "icon": "pong-icon-16x16.png",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "url": "pongWidget.js",
+      "tag": "com-example-pong",
+      "integrity": "sha384-H97FJpJ7rnXItlkZ/zb7Nn5rhAGYwH4vYnJHZ/DYfKM70hqzk81U5+ZyweSJuVjV"
+    },
+    {
+      "kind": "builder",
+      "url": "pongBuilderPanel.js",
+      "tag": "com-example-pong-builder",
+      "integrity": "sha384-X8tdzBHsrupXcLCo4291BkXwxfZecFjDkydf/GRdeUu2wE0LP3wtbsviarWMriDp"
+
+    },
+    {
+      "kind": "styling",
+      "url": "pongStylePanel.js",
+      "tag": "com-example-pong-style",
+      "integrity": "sha384-uCYOc2wStGFOHVJtfLxslSjHrUZw/1Hr03bWHH9ca1+Q2RmjXzoWIh7ZiCjfn72o"
+    }
+  ],
+  "properties": {
+    "ballSpeed": {
+      "type": "number",
+      "default": 5
+    },
+    "paddleColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    }
+  },
+  "events": {
+    "onScore": {
+      "description": "Triggered when a player scores"
+    },
+    "onGameEnd": {
+      "description": "Triggered when the game ends"
+    }
+  },
+  "methods": {
+    "resetGame": {
+      "description": "Reset the game",
+      "parameters": []
+    },
+    "setBallSpeed": {
+      "description": "Set the ball speed",
+      "parameters": [
+        {
+          "name": "speed",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}
