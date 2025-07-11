@@ -1,9 +1,7 @@
-(function () {
-    let builderPanel = function () {};
-    builderPanel.prototype = {
-        render: function (widget) {
-            return `<p>No builder configuration</p>`;
-        },
-    };
-    return builderPanel;
-})();
+class PongBuilderPanel extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `<p>No builder configuration</p>`;
+    }
+}
+
+customElements.define("com-example-pong-builder", PongBuilderPanel);
